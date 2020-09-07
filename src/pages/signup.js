@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import LoginWithFacebook from "../pages/login";
+import { LoginWithFacebook } from "./login";
 
 function SignUpPage() {
   const classes = useSignUpPageStyles();
@@ -22,13 +22,13 @@ function SignUpPage() {
           <Card className={classes.card}>
             <div className={classes.cardHeader} />
             <Typography className={classes.cardHeaderSubHeader}>
-              {/* <LoginWithFacebook
-                color="primary"
-                iconColor="white"
-                variant="contained"
-              /> */}
               Sign up to see photos and videos from your friends.
             </Typography>
+            <LoginWithFacebook
+              color="primary"
+              iconColor="white"
+              variant="contained"
+            />
             <div className={classes.orContainer}>
               <div className={classes.orLine} />
               <div>
@@ -42,7 +42,23 @@ function SignUpPage() {
               <TextField
                 fullWidth
                 variant="filled"
-                label="Phone number, username, or email"
+                label="Email"
+                type="email"
+                margin="dense"
+                className={classes.textField}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                label="Full Name"
+                margin="dense"
+                className={classes.textField}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                label="Username"
+                type="email"
                 margin="dense"
                 className={classes.textField}
                 autoComplete="username"
@@ -51,9 +67,10 @@ function SignUpPage() {
                 fullWidth
                 variant="filled"
                 label="Password"
+                type="password"
                 margin="dense"
                 className={classes.textField}
-                autoComplete="current-password"
+                autoComplete="new-password"
               />
               <Button
                 type="submit"
@@ -62,21 +79,17 @@ function SignUpPage() {
                 className={classes.button}
                 fullWidth
               >
-                Log In
+                Sign Up
               </Button>
             </form>
-            {/* <LoginWithFacebook color="secondary" iconColor="blue" /> */}
-            <Button fullWidth color="secondary">
-              <Typography variant="caption">Forgot password?</Typography>
-            </Button>
           </Card>
-          <Card className={classes.signUpCard}>
+          <Card className={classes.loginCard}>
             <Typography align="right" variant="body2" fullWidth>
-              Don't have an account?
-              <Link to="/accounts/emailsignup">
+              Have an account?
+              <Link to="/accounts/login">
                 {" "}
-                <Button color="primary" className={classes.signUpButton}>
-                  Sign up
+                <Button color="primary" className={classes.loginButton}>
+                  Log In
                 </Button>
               </Link>
             </Typography>

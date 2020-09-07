@@ -35,6 +35,7 @@ function LoginPage() {
                 fullWidth
                 variant="filled"
                 label="Password"
+                type="password"
                 margin="dense"
                 className={classes.textField}
                 autoComplete="current-password"
@@ -58,7 +59,6 @@ function LoginPage() {
               </div>
               <div className={classes.orLine} />
             </div>
-            <LoginWithFacebook color="secondary" iconColor="blue" />
             <Button fullWidth color="secondary">
               <Typography variant="caption">Forgot password?</Typography>
             </Button>
