@@ -1,6 +1,6 @@
 import React from "react";
 import { useSignUpPageStyles } from "../styles";
-import Seo from "../components/shared/Seo";
+import SEO from "../components/shared/Seo";
 import {
   Card,
   CardHeader,
@@ -16,11 +16,28 @@ function SignUpPage() {
 
   return (
     <>
-      <Seo title="Sign up" />
+      <SEO title="Sign up" />
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
             <div className={classes.cardHeader} />
+            <Typography className={classes.cardHeaderSubHeader}>
+              {/* <LoginWithFacebook
+                color="primary"
+                iconColor="white"
+                variant="contained"
+              /> */}
+              Sign up to see photos and videos from your friends.
+            </Typography>
+            <div className={classes.orContainer}>
+              <div className={classes.orLine} />
+              <div>
+                <Typography variant="body2" color="textSecondary">
+                  OR
+                </Typography>
+              </div>
+              <div className={classes.orLine} />
+            </div>
             <form action="">
               <TextField
                 fullWidth
@@ -48,19 +65,10 @@ function SignUpPage() {
                 Log In
               </Button>
             </form>
-            <div className={classes.orContainer}>
-              <div className={classes.orLine} />
-              <div>
-                <Typography variant="body2" color="textSecondary">
-                  OR
-                </Typography>
-              </div>
-              <div className={classes.orLine} />
-            </div>
-            <LoginWithFacebook color="secondary" iconColor="blue" />
-            {/* <Button fullWidth color="secondary">
+            {/* <LoginWithFacebook color="secondary" iconColor="blue" /> */}
+            <Button fullWidth color="secondary">
               <Typography variant="caption">Forgot password?</Typography>
-            </Button> */}
+            </Button>
           </Card>
           <Card className={classes.signUpCard}>
             <Typography align="right" variant="body2" fullWidth>

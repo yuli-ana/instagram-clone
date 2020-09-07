@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoginPageStyles } from "../styles";
-import Seo from "../components/shared/Seo";
+import SEO from "../components/shared/Seo";
 import {
   Card,
   CardHeader,
@@ -17,7 +17,7 @@ function LoginPage() {
 
   return (
     <>
-      <Seo title="Login" />
+      <SEO title="Login" />
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
@@ -80,16 +80,16 @@ function LoginPage() {
   );
 }
 
-export function LoginWithFacebook({ color, iconColor }) {
+export function LoginWithFacebook({ color, iconColor, variant }) {
   const classes = useLoginPageStyles();
 
   const facebookIcon =
     iconColor === "blue" ? FacebookIconBlue : FacebookIconWhite;
 
   return (
-    <Button fullWidth color={color}>
+    <Button fullWidth color={color} variant={variant}>
       <img
-        src={FacebookIconBlue}
+        src={facebookIcon}
         alt="facebook icon"
         className={classes.facebookIcon}
       />
