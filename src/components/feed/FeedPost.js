@@ -168,7 +168,7 @@ function SaveButton() {
 
 function Comment() {
   const classes = useFeedPostStyles();
-  const [content, setContent] = useState("Add a comment");
+  const [content, setContent] = useState("");
 
   return (
     <div className={classes.commentContainer}>
