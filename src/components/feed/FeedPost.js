@@ -10,7 +10,7 @@ import {
   SaveIcon,
 } from "../../icons";
 import { Link } from "react-router-dom";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography, Hidden, Divider } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 function FeedPost({ post }) {
@@ -35,12 +35,12 @@ function FeedPost({ post }) {
         {/* Feed post image */}
         <div className={classes.postButtonsWrapper}>
           <div className={classes.postButtons}>
-            {/* <LikeButton /> */}
+            <LikeButton />
             <Link to={`/p/:${id}`}>
               <CommentIcon />
             </Link>
             <ShareIcon />
-            {/* <SaveButton /> */}
+            <SaveButton />
           </div>
           <Typography className={classes.like} variant="subtitle2">
             <span>{likes === 1 ? "1 like" : `${likes} likes`}</span>
@@ -108,12 +108,23 @@ function FeedPost({ post }) {
             8 HOURS AGO
           </Typography>
         </div>
+        <Hidden xsDown>
+          <Divider />
+          <Comment />
+        </Hidden>
       </article>
     </>
   );
 }
 
-// function LikeButton() {}
-// function SaveButton() {}
+function LikeButton() {
+  return <>LikeButton</>;
+}
+function SaveButton() {
+  return <>SaveButton</>;
+}
+function Comment() {
+  return <>Comment</>;
+}
 
 export default FeedPost;
