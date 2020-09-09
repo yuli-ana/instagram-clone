@@ -180,6 +180,7 @@ function Comment() {
         rowsMax={2}
         rows={1}
         onChange={(e) => setContent(e.target.value)}
+        className={classes.textField}
         InputProps={{
           classes: {
             root: classes.root,

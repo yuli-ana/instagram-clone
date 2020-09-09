@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { Avatar, Typography } from "@material-ui/core";
 import { defaultUser } from "../../data";
 
-function UserCard({ user = defaultUser }) {
-  const classes = useUserCardStyles();
+function UserCard({ user = defaultUser, avatarSize = 44 }) {
+  const classes = useUserCardStyles({ avatarSize });
 
-  const { id, name, profile_image, username } = user;
+  const { name, profile_image, username } = user;
 
   return (
     <div className={classes.wrapper}>
