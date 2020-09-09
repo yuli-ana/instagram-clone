@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFeedPostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
 import {
@@ -11,11 +11,14 @@ import {
 } from "../../icons";
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@material-ui/core";
+import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 function FeedPost({ post }) {
   const classes = useFeedPostStyles();
 
-  const { media, id, caption, likes } = post;
+  const [showCaption, setShowCaption] = useState(false);
+
+  const { media, id, caption, likes, user } = post;
 
   return (
     <>
@@ -42,6 +45,41 @@ function FeedPost({ post }) {
           <Typography className={classes.like} variant="subtitle2">
             <span>{likes === 1 ? "1 like" : `${likes} likes`}</span>
           </Typography>
+          <div className={showCaption ? classes.expanded : classes.collapsed}>
+            <Link to={`/${user.username}`}>
+              <Typography
+                variant="subtitle2"
+                component="span"
+                className={classes.username}
+              >
+                {user.username}
+              </Typography>
+            </Link>
+            {showCaption ? (
+              <Typography
+                variant="body2"
+                component="span"
+                dangerouslySetInnerHTML={{ __html: caption }}
+              ></Typography>
+            ) : (
+              <div className={classes.captionWrapper}>
+                <HTMLEllipsis
+                  unsafeHTML={caption}
+                  className={classes.caption}
+                  maxLine="0"
+                  ellipsis="..."
+                  basedOn="letters"
+                />
+                <Button
+                  onClick={() => setShowCaption(true)}
+                  className={classes.moreButton}
+                >
+                  more
+                </Button>
+              </div>
+            )}
+          </div>
+          <HTMLEllipsis />
         </div>
       </article>
     </>
