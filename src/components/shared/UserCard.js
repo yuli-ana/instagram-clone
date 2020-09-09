@@ -2,12 +2,12 @@ import React from "react";
 import { useUserCardStyles } from "../../styles";
 import { Link } from "react-router-dom";
 import { Avatar, Typography } from "@material-ui/core";
+import { defaultUser } from "../../data";
 
-function UserCard({ user }) {
+function UserCard({ user = defaultUser }) {
   const classes = useUserCardStyles();
-  const { name, profile_image, username } = user;
 
-  console.log(user);
+  const { id, name, profile_image, username } = user;
 
   return (
     <div className={classes.wrapper}>
@@ -37,4 +37,3 @@ function UserCard({ user }) {
 }
 
 export default UserCard;
-

@@ -8,6 +8,7 @@ import {
   CommentIcon,
   UnlikeIcon,
   SaveIcon,
+  RemoveIcon,
 } from "../../icons";
 import { Link } from "react-router-dom";
 import { Button, Typography, Hidden, Divider } from "@material-ui/core";
@@ -35,7 +36,7 @@ function FeedPost({ post }) {
         {/* Feed post image */}
         <div className={classes.postButtonsWrapper}>
           <div className={classes.postButtons}>
-            <LikeButton />
+            <LikeButton likes={likes} />
             <Link to={`/p/:${id}`}>
               <CommentIcon />
             </Link>
@@ -117,12 +118,48 @@ function FeedPost({ post }) {
   );
 }
 
-function LikeButton() {
-  return <>LikeButton</>;
+function LikeButton({ likes }) {
+  const classes = useFeedPostStyles();
+  const [liked, setLiked] = useState(false);
+  //capitalized Icon because it's a component
+  const Icon = liked ? UnlikeIcon : LikeIcon;
+
+  // For animation
+  const className = liked ? classes.liked : classes.like;
+  const onClick = liked ? handleUnlike : handleLike;
+
+  const newLikes = likes + 1;
+  console.log(newLikes);
+
+  function handleLike() {
+    setLiked(true);
+  }
+
+  function handleUnlike() {
+    setLiked(false);
+  }
+
+  return <Icon className={className} onClick={onClick} />;
 }
+
 function SaveButton() {
-  return <>SaveButton</>;
+  const classes = useFeedPostStyles();
+  const [saved, setSaved] = useState(false);
+  //capitalized Icon because it's a component
+  const Icon = saved ? RemoveIcon : SaveIcon;
+  const onClick = saved ? handleSave : handleRemove;
+
+  function handleSave() {
+    setSaved(true);
+  }
+
+  function handleRemove() {
+    setSaved(false);
+  }
+
+  return <Icon className={classes.saveIcon} onClick={onClick} />;
 }
+
 function Comment() {
   return <>Comment</>;
 }
