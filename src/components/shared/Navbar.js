@@ -8,7 +8,7 @@ function Navbar() {
   const classes = useNavbarStyles();
 
   return (
-    <AppBar class={classes.appBar}>
+    <AppBar className={classes.appBar}>
       <section className={classes.section}>
         <Logo />
       </section>
