@@ -88,6 +88,19 @@ function FeedPost({ post }) {
               View all {comments.length} comments
             </Typography>
           </Link>
+          {comments.map((comment) => (
+            <div key={comment.id}>
+              <Link to={`/${comment.user.username}`}>
+                <Typography
+                  variant="subtitle2"
+                  component="span"
+                  className={classes.commentUsername}
+                >
+                  {comment.user.username}
+                </Typography>
+              </Link>
+            </div>
+          ))}
         </div>
       </article>
     </>
