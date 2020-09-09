@@ -25,7 +25,7 @@ function FeedPost({ post }) {
       <article className={classes.article}>
         {/* Feed post header */}
         <div className={classes.postHeader}>
-          <UserCard />
+          <UserCard user={user} />
           <MoreIcon className={classes.MoreIcon} />
         </div>
         {/* Feed post image */}
