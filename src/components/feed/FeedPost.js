@@ -97,10 +97,16 @@ function FeedPost({ post }) {
                   className={classes.commentUsername}
                 >
                   {comment.user.username}
+                </Typography>{" "}
+                <Typography variant="body2" component="span">
+                  {comment.content}
                 </Typography>
               </Link>
             </div>
           ))}
+          <Typography color="textSecondary" className={classes.datePosted}>
+            8 HOURS AGO
+          </Typography>
         </div>
       </article>
     </>
