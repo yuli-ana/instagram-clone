@@ -18,7 +18,7 @@ function FeedPost({ post }) {
 
   const [showCaption, setShowCaption] = useState(false);
 
-  const { media, id, caption, likes, user } = post;
+  const { media, id, caption, likes, user, comments } = post;
 
   return (
     <>
@@ -79,7 +79,15 @@ function FeedPost({ post }) {
               </div>
             )}
           </div>
-          <HTMLEllipsis />
+          <Link to={`/p/${id}`}>
+            <Typography
+              className={classes.commentsLink}
+              variant="body2"
+              component="div"
+            >
+              View all {comments.length} comments
+            </Typography>
+          </Link>
         </div>
       </article>
     </>

@@ -7,6 +7,7 @@ import { Hidden } from "@material-ui/core";
 import UserCard from "../components/shared/UserCard";
 import FeedSideSuggestions from "../components/feed/FeedSideSuggestions";
 
+
 function FeedPage() {
   const classes = useFeedPageStyles();
 
