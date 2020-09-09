@@ -11,7 +11,13 @@ import {
   RemoveIcon,
 } from "../../icons";
 import { Link } from "react-router-dom";
-import { Button, Typography, Hidden, Divider } from "@material-ui/core";
+import {
+  Button,
+  Typography,
+  Hidden,
+  Divider,
+  TextField,
+} from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 function FeedPost({ post }) {
@@ -161,7 +167,35 @@ function SaveButton() {
 }
 
 function Comment() {
-  return <>Comment</>;
+  const classes = useFeedPostStyles();
+  const [content, setContent] = useState("Add a comment");
+
+  return (
+    <div className={classes.commentContainer}>
+      <TextField
+        fullWidth
+        value={content}
+        placeholder="Add a comment..."
+        multiline
+        rowsMax={2}
+        rows={1}
+        onChange={(e) => setContent(e.target.value)}
+        InputProps={{
+          classes: {
+            root: classes.root,
+            underline: classes.underline,
+          },
+        }}
+      />
+      <Button
+        color="primary"
+        className={classes.commentButton}
+        disabled={!content.trim()}
+      >
+        Post
+      </Button>
+    </div>
+  );
 }
 
 export default FeedPost;
