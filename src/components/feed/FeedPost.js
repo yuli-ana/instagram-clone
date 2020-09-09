@@ -147,7 +147,7 @@ function SaveButton() {
   const [saved, setSaved] = useState(false);
   //capitalized Icon because it's a component
   const Icon = saved ? RemoveIcon : SaveIcon;
-  const onClick = saved ? handleSave : handleRemove;
+  const onClick = saved ? handleRemove : handleSave;
 
   function handleSave() {
     setSaved(true);
