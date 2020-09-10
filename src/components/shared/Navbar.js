@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavbarStyles } from "../../styles";
-import { AppBar } from "@material-ui/core";
+import { AppBar, Hidden, InputBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
+import { LoadingIcon } from "../../icons";
 
-function Navbar() {
+function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
 
   return (
     <AppBar className={classes.appBar}>
       <section className={classes.section}>
         <Logo />
+        {!minimalNavbar && <Search />}
+        {!minimalNavbar && <Links />}
       </section>
     </AppBar>
   );
@@ -28,6 +31,35 @@ function Logo() {
       </Link>
     </div>
   );
+}
+
+function Search() {
+  const classes = useNavbarStyles();
+  const [query, setQuery] = useState("");
+  let loading = false;
+
+  return (
+    <Hidden xsDown>
+      <InputBase
+        onChange={(e) => setQuery(e.target.value)}
+        className={classes.input}
+        placeholder="Search"
+        value={query}
+        startAdornment={<span className={classes.searchIcon} />}
+        endAdornment={
+          loading ? (
+            <LoadingIcon />
+          ) : (
+            <span onClick={() => setQuery("")} className={classes.clearIcon} />
+          )
+        }
+      />
+    </Hidden>
+  );
+}
+
+function Links() {
+  return false;
 }
 
 export default Navbar;

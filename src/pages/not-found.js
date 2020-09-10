@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function NotFoundPage() {
   return (
-    <Layout title="Page Not Found" marginTop={120}>
+    <Layout minimalNavbar title="Page Not Found" marginTop={120}>
       <Typography variant="h5" align="center" paragraph>
         Sorry, this page isn't available...
       </Typography>
