@@ -134,9 +134,6 @@ function LikeButton({ likes }) {
   const className = liked ? classes.liked : classes.like;
   const onClick = liked ? handleUnlike : handleLike;
 
-  const newLikes = likes + 1;
-  console.log(newLikes);
-
   function handleLike() {
     setLiked(true);
   }

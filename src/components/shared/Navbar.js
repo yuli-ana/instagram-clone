@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { useNavbarStyles } from "../../styles";
-import { AppBar, Hidden, InputBase } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { AppBar, Hidden, InputBase, Button } from "@material-ui/core";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
-import { LoadingIcon } from "../../icons";
+import {
+  LoadingIcon,
+  AddIcon,
+  LikeActiveIcon,
+  LikeIcon,
+  ExploreActiveIcon,
+  ExploreIcon,
+  HomeActiveIcon,
+  HomeIcon,
+} from "../../icons";
+import NotificationList from "../notification/NotificationList";
+import { defaultCurrentUser } from "../../data";
 
 function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
+  const history = useHistory();
+  const path = history.location.pathname;
 
   return (
     <AppBar className={classes.appBar}>
       <section className={classes.section}>
         <Logo />
-        {!minimalNavbar && <Search />}
-        {!minimalNavbar && <Links />}
+        {!minimalNavbar && (
+          <>
+            <Search />
+            <Links path={path} />
+          </>
+        )}
       </section>
     </AppBar>
   );
@@ -58,8 +75,29 @@ function Search() {
   );
 }
 
-function Links() {
-  return false;
+function Links({ path }) {
+  const classes = useNavbarStyles();
+  const [showList, setList] = useState(false);
+
+  return (
+    <div className={classes.linksContainer}>
+      <div className={classes.linksContainer}>
+        <Hidden xsDown>
+          <AddIcon />
+          <Link to="/">{path === "/" ? <HomeActiveIcon /> : <HomeIcon />}</Link>
+          <Link to="/explore">
+            {path === "/explore" ? <ExploreActiveIcon /> : <ExploreIcon />}
+          </Link>
+          <div className={classes.notifications}>
+            {showList ? <LikeActiveIcon /> : <LikeIcon />}
+          </div>
+          <Link to={`${defaultCurrentUser}`}>
+            {path === "/explore" ? <ExploreActiveIcon /> : <ExploreIcon />}
+          </Link>
+        </Hidden>
+      </div>
+    </div>
+  );
 }
 
 export default Navbar;
