@@ -8,7 +8,7 @@ import { LoadingIcon } from "../../icons";
 
 function FeedSideSuggestions() {
   const classes = useFeedSideSuggestionsStyles();
-  
+
   let loading = false;
 
   return (

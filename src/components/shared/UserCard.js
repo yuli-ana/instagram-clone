@@ -14,7 +14,7 @@ function UserCard({ user = defaultUser, avatarSize = 44 }) {
       <Link to={`/${username}`}>
         <Avatar
           src={profile_image}
-          alt="User avater"
+          alt="User avatar"
           className={classes.avatar}
         />
       </Link>
