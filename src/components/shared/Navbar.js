@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavbarStyles, WhiteTooltip } from "../../styles";
-import { AppBar, Hidden, InputBase, Button, Avatar } from "@material-ui/core";
+import {
+  AppBar,
+  Hidden,
+  InputBase,
+  Avatar,
+  Typography,
+  Fade,
+} from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
 import {
@@ -72,7 +79,7 @@ function Search() {
       <WhiteTooltip
         arrow
         interactive
-        TransitionComponent=""
+        TransitionComponent={Fade}
         open={hasResults}
         title={
           hasResults && (
@@ -82,6 +89,12 @@ function Search() {
                   <div className={classes.resultWrapper}>
                     <div className={classes.avatarWrapper}>
                       <Avatar src={result.profile_image} alt="User avatar" />
+                    </div>
+                    <div>
+                      <Typography variant="body1">{result.username}</Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {result.name}
+                      </Typography>
                     </div>
                   </div>
                 </Grid>
