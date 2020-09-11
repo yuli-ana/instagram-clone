@@ -8,8 +8,6 @@ function Layout({ minimalNavbar = false, children, title, marginTop = 60 }) {
 
   // MinimalNavBar is for the notFound page
 
-  
-
   return (
     <section className={classes.section}>
       <SEO title={title} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavbarStyles } from "../../styles";
-import { AppBar, Hidden, InputBase, Button } from "@material-ui/core";
+import { AppBar, Hidden, InputBase, Button, Avatar } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
 import {
@@ -91,8 +91,18 @@ function Links({ path }) {
           <div className={classes.notifications}>
             {showList ? <LikeActiveIcon /> : <LikeIcon />}
           </div>
-          <Link to={`${defaultCurrentUser}`}>
-            {path === "/explore" ? <ExploreActiveIcon /> : <ExploreIcon />}
+          <Link to={`${defaultCurrentUser.username}`}>
+            <div
+              className={
+                path === `/${defaultCurrentUser.username}`
+                  ? classes.profileActive
+                  : ""
+              }
+            ></div>
+            <Avatar
+              src={defaultCurrentUser.profile_image}
+              className={classes.profileImage}
+            />
           </Link>
         </Hidden>
       </div>
