@@ -141,7 +141,15 @@ function Search({ history }) {
 function Links({ path }) {
   const classes = useNavbarStyles();
   const [showList, setList] = useState(false);
-  const [showTooltip, setTooltip] = useState(false);
+  const [showTooltip, setTooltip] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(handleHideTooltip, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
   function handleToggleList() {
     // Toggle state

@@ -1,10 +1,11 @@
 import React from "react";
 import { useNotificationListStyles } from "../../styles";
+import NotificationTooltip from "./NotificationTooltip";
 
 function NotificationList() {
-  useNotificationListStyles();
+  const classes = useNotificationListStyles();
 
-  return <div>NotificationList</div>;
+  return <>NotificationList</>;
 }
 
 export default NotificationList;
