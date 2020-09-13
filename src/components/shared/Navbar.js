@@ -67,10 +67,11 @@ function Search() {
   // If it's a non-empty string👇🏻 && results isn't empty array, it it's a true then add a tooltip
   const hasResults = Boolean(query) && results.length > 0;
 
-  // Check if query is not empty
   useEffect(() => {
+    // Check if query is not empty
     if (!query.trim()) return;
 
+    // Show search results
     setResults(Array.from({ length: 5 }, () => getDefaultUser()));
   }, [query]);
 
