@@ -35,7 +35,7 @@ function Navbar({ minimalNavbar }) {
         <Logo />
         {!minimalNavbar && (
           <>
-            <Search />
+            <Search history={history} />
             <Links path={path} />
           </>
         )}
@@ -58,7 +58,7 @@ function Logo() {
   );
 }
 
-function Search() {
+function Search({ history }) {
   const classes = useNavbarStyles();
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -75,6 +75,10 @@ function Search() {
     setResults(Array.from({ length: 5 }, () => getDefaultUser()));
   }, [query]);
 
+  function handleClearInput() {
+    setQuery("");
+  }
+
   return (
     <Hidden xsDown>
       <WhiteTooltip
@@ -86,12 +90,21 @@ function Search() {
           hasResults && (
             <Grid className={classes.resultContainer} container>
               {results.map((result) => (
-                <Grid key={result.id} item className={classes.resultLink}>
+                <Grid
+                  onClick={() => {
+                    // Imperatively navigate to provided route
+                    history.push(`${result.username}`);
+                    handleClearInput();
+                  }}
+                  key={result.id}
+                  item
+                  className={classes.resultLink}
+                >
                   <div className={classes.resultWrapper}>
                     <div className={classes.avatarWrapper}>
                       <Avatar src={result.profile_image} alt="User avatar" />
                     </div>
-                    <div>
+                    <div className={classes.nameWrapper}>
                       <Typography variant="body1">{result.username}</Typography>
                       <Typography variant="body2" color="textSecondary">
                         {result.name}
@@ -114,10 +127,7 @@ function Search() {
             loading ? (
               <LoadingIcon />
             ) : (
-              <span
-                onClick={() => setQuery("")}
-                className={classes.clearIcon}
-              />
+              <span onClick={handleClearInput} className={classes.clearIcon} />
             )
           }
         />
