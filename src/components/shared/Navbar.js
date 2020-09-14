@@ -165,6 +165,7 @@ function Links({ path }) {
 
   return (
     <div className={classes.linksContainer}>
+      {showList && <NotificationList />}
       <div className={classes.linksWrapper}>
         <Hidden xsDown>
           <AddIcon />
