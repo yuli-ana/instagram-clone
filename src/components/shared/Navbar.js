@@ -25,24 +25,34 @@ import NotificationList from "../notification/NotificationList";
 import { defaultCurrentUser, getDefaultUser } from "../../data";
 import { Grid } from "@material-ui/core";
 import NotificationTooltip from "../notification/NotificationTooltip";
+import { useNProgress } from "@tanem/react-nprogress";
 
 function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
   const history = useHistory();
   const path = history.location.pathname;
+  const [isLoadingPage, setLoadingPage] = useState(true);
+
+  // Keep track of when the page started and finished loading
+  useEffect(() => {
+    setLoadingPage(false);
+  }, [path]);
 
   return (
-    <AppBar className={classes.appBar}>
-      <section className={classes.section}>
-        <Logo />
-        {!minimalNavbar && (
-          <>
-            <Search history={history} />
-            <Links path={path} />
-          </>
-        )}
-      </section>
-    </AppBar>
+    <>
+      <Progress isAnimating={isLoadingPage} />
+      <AppBar className={classes.appBar}>
+        <section className={classes.section}>
+          <Logo />
+          {!minimalNavbar && (
+            <>
+              <Search history={history} />
+              <Links path={path} />
+            </>
+          )}
+        </section>
+      </AppBar>
+    </>
   );
 }
 
@@ -161,9 +171,13 @@ function Links({ path }) {
     setTooltip(false);
   }
 
+  function handleHideList() {
+    setList(false);
+  }
+
   return (
     <div className={classes.linksContainer}>
-      {showList && <NotificationList />}
+      {showList && <NotificationList handleHideList={handleHideList} />}
       <div className={classes.linksWrapper}>
         <Hidden xsDown>
           <AddIcon />
@@ -196,6 +210,34 @@ function Links({ path }) {
             className={classes.profileImage}
           />
         </Link>
+      </div>
+    </div>
+  );
+}
+
+function Progress({ isAnimating }) {
+  const classes = useNavbarStyles();
+
+  const { animationDuration, isFinished, progress } = useNProgress({
+    isAnimating,
+  });
+
+  return (
+    <div
+      className={classes.progressContainer}
+      style={{
+        opacity: isFinished ? 0 : 1,
+        transition: `opacity ${animationDuration}ms linear`,
+      }}
+    >
+      <div
+        className={classes.progressBar}
+        style={{
+          marginLeft: `${(-1 + progress) * 100}%`,
+          transition: `margin-left ${animationDuration}ms linear`,
+        }}
+      >
+        <div className={classes.progressBackground} />
       </div>
     </div>
   );
