@@ -8,7 +8,9 @@ function NotificationTooltip() {
   return (
     <div className={classes.tooltipContainer}>
       <div className={classes.tooltip}>
+        {/* Span is an icon itself */}
         <span aria-label="Followers" className={classes.followers} />
+        {/* The count */}
         <Typography>1</Typography>
       </div>
       <div className={classes.tooltip}>

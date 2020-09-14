@@ -94,7 +94,7 @@ function Search({ history }) {
               {results.map((result) => (
                 <Grid
                   onClick={() => {
-                    // Imperatively navigate to provided route
+                    // Imperatively navigate to the provided path
                     history.push(`${result.username}`);
                     handleClearInput();
                   }}
@@ -143,6 +143,7 @@ function Links({ path }) {
   const [showList, setList] = useState(false);
   const [showTooltip, setTooltip] = useState(true);
 
+  // After 5 sec change state from true to false
   useEffect(() => {
     const timeout = setTimeout(handleHideTooltip, 5000);
 
@@ -175,7 +176,7 @@ function Links({ path }) {
         <RedTooltip
           arrow
           open={showTooltip}
-          onOpen={handleHideTooltip}
+          onOpen={handleHideTooltip} // this hides a tooltip immediately on hover
           TransitionComponent={Zoom}
           title={<NotificationTooltip />}
         >
