@@ -155,8 +155,6 @@ function Links({ path }) {
   function handleToggleList() {
     // Toggle state
     setList((prev) => !prev);
-
-    return <div>{showList ? <NotificationList /> : ""}</div>;
   }
 
   function handleHideTooltip() {
