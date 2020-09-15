@@ -31,15 +31,18 @@ function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
   const history = useHistory();
   const path = history.location.pathname;
+  // Track loading
   const [isLoadingPage, setLoadingPage] = useState(true);
 
-  // Keep track of when the page started and finished loading
+  /* Keep track of when the page started and finished loading, initially set
+  to true, when the component is mounted will update to false () */
   useEffect(() => {
     setLoadingPage(false);
   }, [path]);
 
   return (
     <>
+      {/* Progress bar */}
       <Progress isAnimating={isLoadingPage} />
       <AppBar className={classes.appBar}>
         <section className={classes.section}>
@@ -218,6 +221,7 @@ function Links({ path }) {
 function Progress({ isAnimating }) {
   const classes = useNavbarStyles();
 
+  // Custom hook from a tanem/react-nprogress package.
   const { animationDuration, isFinished, progress } = useNProgress({
     isAnimating,
   });
