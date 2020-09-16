@@ -2,7 +2,7 @@ import React from "react";
 import { useFollowSuggestionsStyles } from "../../styles";
 
 function FollowSuggestions() {
-  useFollowSuggestionsStyles();
+  const classes = useFollowSuggestionsStyles();
 
   return <div>FollowSuggestions</div>;
 }
