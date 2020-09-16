@@ -23,7 +23,7 @@ function FollowSuggestions() {
       >
         Suggestion For You
       </Typography>
-      <Link>
+      <Link to="">
         <Typography variant="subtitle2" color="primary">
           See All
         </Typography>
@@ -64,7 +64,7 @@ function FollowSuggestionsItem({ user }) {
             alt={`${username}'s profile`}
             classes={{
               root: classes.avatar,
-              image: classes.avatarImg,
+              img: classes.avatarImg,
             }}
           />
         </Link>

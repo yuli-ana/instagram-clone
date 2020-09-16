@@ -32,7 +32,12 @@ function FeedPost({ post, index }) {
 
   return (
     <>
-      <article className={classes.article}>
+      <article
+        className={classes.article}
+        style={{
+          marginBottom: showFollowSuggestion && 30,
+        }}
+      >
         {/* Feed post header */}
         <div className={classes.postHeader}>
           <UserCard user={user} />
