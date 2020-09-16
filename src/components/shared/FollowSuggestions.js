@@ -53,7 +53,7 @@ function FollowSuggestions() {
 }
 function FollowSuggestionsItem({ user }) {
   const classes = useFollowSuggestionsStyles();
-  const { id, username, name, profile_image } = user;
+  const { username, name, profile_image } = user;
 
   return (
     <div>
