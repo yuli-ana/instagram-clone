@@ -27,7 +27,7 @@ function App() {
   const isModalOpen = modal && prevLocation.current !== location;
 
   return (
-    <Switch>
+    <Switch location={isModalOpen ? prevLocation.current : location}>
       <Route exact path="/" component={FeedPage} />
       <Route path="/explore" component={ExplorePage} />
       <Route exact path="/:username" component={ProfilePage} />
