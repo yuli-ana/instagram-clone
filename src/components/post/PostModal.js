@@ -2,7 +2,7 @@ import React from "react";
 import { usePostModalStyles } from "../../styles";
 
 function PostModal() {
-  usePostModalStyles();
+  const classes = usePostModalStyles();
 
   return <div>PostModal</div>;
 }

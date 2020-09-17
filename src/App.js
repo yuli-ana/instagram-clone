@@ -8,6 +8,7 @@ import NotFoundPage from "./pages/not-found";
 import PostPage from "./pages/post";
 import ProfilePage from "./pages/profile";
 import SignUpPage from "./pages/signup";
+import PostModal from "./components/post/PostModal";
 
 function App() {
   return (
