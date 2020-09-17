@@ -15,7 +15,8 @@ function ExploreSuggestions() {
           component="h2"
           className={classes.typography}
         >
-          <FollowSuggestions />
+          Discover people
+          <FollowSuggestions hideHeader />
         </Typography>
       </div>
     </Hidden>
