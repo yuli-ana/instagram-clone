@@ -7,7 +7,6 @@ function GridPost({ post }) {
   const history = useHistory();
   const classes = useGridPostStyles();
   const { media, likes, comments, id } = post;
-  console.log(history);
 
   function handleOpenPostModal() {
     history.push({

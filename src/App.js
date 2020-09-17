@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import EditProfilePage from "./pages/edit-profile";
 import ExplorePage from "./pages/explore";
 import FeedPage from "./pages/feed";
@@ -12,7 +12,19 @@ import PostModal from "./components/post/PostModal";
 
 function App() {
   const history = useHistory();
-  console.log(history);
+  //Current location
+  const location = useLocation();
+  const prevLocation = useRef(location);
+  const modal = location.state?.modal;
+
+  useEffect(() => {
+    if (history.action !== "POP" && !modal) {
+      prevLocation.current = location;
+    }
+  }, [history.action, location, modal]);
+
+  // If modal is true and we move do a different route than modal is open
+  const isModalOpen = modal && prevLocation.current !== location;
 
   return (
     <Switch>
