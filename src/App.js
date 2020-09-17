@@ -27,16 +27,19 @@ function App() {
   const isModalOpen = modal && prevLocation.current !== location;
 
   return (
-    <Switch location={isModalOpen ? prevLocation.current : location}>
-      <Route exact path="/" component={FeedPage} />
-      <Route path="/explore" component={ExplorePage} />
-      <Route exact path="/:username" component={ProfilePage} />
-      <Route exact path="/p/:postId" component={PostPage} />
-      <Route path="/accounts/edit" component={EditProfilePage} />
-      <Route path="/accounts/login" component={LoginPage} />
-      <Route path="/accounts/emailsignup" component={SignUpPage} />
-      <Route path="*" component={NotFoundPage} />
-    </Switch>
+    <>
+      <Switch location={isModalOpen ? prevLocation.current : location}>
+        <Route exact path="/" component={FeedPage} />
+        <Route path="/explore" component={ExplorePage} />
+        <Route exact path="/:username" component={ProfilePage} />
+        <Route exact path="/p/:postId" component={PostPage} />
+        <Route path="/accounts/edit" component={EditProfilePage} />
+        <Route path="/accounts/login" component={LoginPage} />
+        <Route path="/accounts/emailsignup" component={SignUpPage} />
+        <Route path="*" component={NotFoundPage} />
+      </Switch>
+      {isModalOpen && <Route exact path="/p/:postId" component={PostModal} />}
+    </>
   );
 }
 
