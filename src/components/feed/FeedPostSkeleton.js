@@ -2,7 +2,7 @@ import React from "react";
 import { useFeedPostSkeletonStyles } from "../../styles";
 
 function FeedPostSkeleton() {
-  useFeedPostSkeletonStyles();
+  const classes = useFeedPostSkeletonStyles();
 
   return <div>FeedPostSkeleton</div>;
 }

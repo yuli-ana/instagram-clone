@@ -2,7 +2,7 @@ import React from "react";
 import { usePostSkeletonStyles } from "../../styles";
 
 export function PostSkeleton() {
-  usePostSkeletonStyles();
+  const classes = usePostSkeletonStyles();
 
   return <div>PostSkeleton</div>;
 }

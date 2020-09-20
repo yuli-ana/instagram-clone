@@ -2,7 +2,7 @@ import React from "react";
 import { useEditProfilePageStyles } from "../styles";
 
 function EditProfilePage() {
-  useEditProfilePageStyles();
+  const classes = useEditProfilePageStyles();
 
   return <div>EditProfilePage</div>;
 }

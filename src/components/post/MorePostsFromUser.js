@@ -2,7 +2,7 @@ import React from "react";
 import { useMorePostsFromUserStyles } from "../../styles";
 
 function MorePostsFromUser() {
-  useMorePostsFromUserStyles();
+  const classes = useMorePostsFromUserStyles();
 
   return <div>MorePostsFromUser</div>;
 }
