@@ -12,19 +12,12 @@ import PostModal from "./components/post/PostModal";
 
 function App() {
   const history = useHistory();
-  console.log(history);
   // Returns the location {} that represents the current URL
   const location = useLocation();
-  console.log(location);
   const prevLocation = useRef(location);
-
-  console.log(prevLocation);
   const modal = location.state?.modal;
 
-  console.log(modal);
-
   useEffect(() => {
-    console.log(history.action, modal);
     if (history.action !== "POP" && !modal) {
       prevLocation.current = location;
     }
