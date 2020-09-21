@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 function MorePostsFromUser() {
   const classes = useMorePostsFromUserStyles();
-  const { id, username, name } = defaultUser;
   let loading = false;
 
   return (
@@ -22,8 +21,8 @@ function MorePostsFromUser() {
         className={classes.typography}
       >
         More posts from{" "}
-        <Link to={`/${username}`} className={classes.link}>
-          {`@${username}`}
+        <Link to={`/${defaultUser.username}`} className={classes.link}>
+          {`@${defaultUser.username}`}
         </Link>
       </Typography>
       {loading ? (
