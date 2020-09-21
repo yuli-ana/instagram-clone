@@ -5,7 +5,7 @@ import ExplorePage from "./pages/explore";
 import FeedPage from "./pages/feed";
 import LoginPage from "./pages/login";
 import NotFoundPage from "./pages/not-found";
-import PostPage from "./pages/post";
+import PostPage from "./pages/Post";
 import ProfilePage from "./pages/profile";
 import SignUpPage from "./pages/signup";
 import PostModal from "./components/post/PostModal";
