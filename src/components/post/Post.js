@@ -20,11 +20,21 @@ import {
 } from "@material-ui/core";
 import OptionsDialog from "../shared/OptionsDialog";
 import { defaultPost } from "../../data";
+import PostSkeleton from "../post/PostSkeleton";
 
 function Post() {
   const classes = usePostStyles();
   const [toggleOptions, setToggleOptions] = useState(false);
   const { id, likes, media, user, caption, comments } = defaultPost;
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
+  if (loading) {
+    return <PostSkeleton />;
+  }
 
   function handleToggleOptions() {
     setToggleOptions(true);
