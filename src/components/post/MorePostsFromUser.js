@@ -2,7 +2,7 @@ import React from "react";
 import { useMorePostsFromUserStyles } from "../../styles";
 import { getDefaultPost, defaultUser } from "../../data";
 import { LoadingLargeIcon } from "../../icons";
-import { Typography } from "@material-ui/core";
+import { Typography, Divider } from "@material-ui/core";
 import GridPost from "../shared/GridPost";
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function MorePostsFromUser() {
 
   return (
     <div className={classes.container}>
+      <Divider />
       <Typography
         color="textSecondary"
         variant="subtitle2"
