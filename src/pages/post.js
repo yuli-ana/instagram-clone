@@ -87,11 +87,11 @@ function Post() {
           <Typography color="textSecondary" className={classes.datePosted}>
             8 HOURS AGO
           </Typography>
+          <Hidden xsDown>
+            <Divider />
+            <Comment />
+          </Hidden>
         </div>
-        <Hidden xsDown>
-          <Divider />
-          <Comment />
-        </Hidden>
       </article>
 
       {showFollowSuggestion && <FollowSuggestions />}
