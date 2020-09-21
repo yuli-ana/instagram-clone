@@ -57,42 +57,16 @@ function Post() {
             <ShareIcon />
             <SaveButton />
           </div>
-          <Typography className={classes.like} variant="subtitle2">
+          <Typography className={classes.likes} variant="subtitle2">
             <span>{likes === 1 ? "1 like" : `${likes} likes`}</span>
           </Typography>
-          <div className={showCaption ? classes.expanded : classes.collapsed}>
-            <Link to={`/${user.username}`}>
-              <Typography
-                variant="subtitle2"
-                component="span"
-                className={classes.username}
-              >
-                {user.username}
-              </Typography>
-            </Link>
-            {showCaption ? (
-              <Typography
-                variant="body2"
-                component="span"
-                dangerouslySetInnerHTML={{ __html: caption }}
-              ></Typography>
-            ) : (
-              <div className={classes.captionWrapper}>
-                <HTMLEllipsis
-                  unsafeHTML={caption}
-                  className={classes.caption}
-                  maxLine="0"
-                  ellipsis="..."
-                  basedOn="letters"
-                />
-                <Button
-                  onClick={() => setShowCaption(true)}
-                  className={classes.moreButton}
-                >
-                  more
-                </Button>
-              </div>
-            )}
+          <div className={classes.postCaptionContainer}>
+            <Typography
+              variant="body2"
+              component="span"
+              className={classes.postCaption}
+              dangerouslySetInnerHTML={{ __html: caption }}
+            />
           </div>
           <Link to={`/p/${id}`}>
             <Typography
