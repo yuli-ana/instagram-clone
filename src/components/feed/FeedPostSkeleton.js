@@ -14,6 +14,7 @@ function FeedPostSkeleton() {
           </div>
         </div>
       </div>
+      <div className={classes.mediaSkeleton} />
     </div>
   );
 }
