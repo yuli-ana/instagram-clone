@@ -32,27 +32,22 @@ function Post() {
   }
 
   return (
-    <>
-      <article
-        className={classes.article}
-        style={{
-          marginBottom: showFollowSuggestion && 30,
-        }}
-      >
-        {/* Feed post header */}
+    <div className={classes.postContainer}>
+      <article className={classes.article}>
+        {/* Post header */}
         <div className={classes.postHeader}>
-          <UserCard user={user} />
+          <UserCard user={user} avatarSize={32} />
 
           <MoreIcon
             onClick={handleToggleOptions}
             className={classes.MoreIcon}
           />
         </div>
-        {/* Feed post image */}
-        <div>
+        {/* Post image */}
+        <div className={classes.postImage}>
           <img src={media} alt="Post media" className={classes.image} />
         </div>
-        {/* Feed post image */}
+        {/* Post buttons */}
         <div className={classes.postButtonsWrapper}>
           <div className={classes.postButtons}>
             <LikeButton likes={likes} />
@@ -138,7 +133,7 @@ function Post() {
       {toggleOptions && (
         <OptionsDialog id={id} onClose={() => setToggleOptions(false)} />
       )}
-    </>
+    </div>
   );
 }
 
