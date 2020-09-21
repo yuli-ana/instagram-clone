@@ -9,6 +9,7 @@ function PostModal() {
   const history = useHistory();
   const { postId } = useParams();
   const classes = usePostModalStyles();
+  console.log(postId);
 
   return (
     <>
@@ -16,6 +17,7 @@ function PostModal() {
         isOpen
         overlayClassName={classes.overlay}
         onRequestClose={() => history.goBack()}
+        ariaHideApp={false}
         style={{
           content: {
             display: "flex",
