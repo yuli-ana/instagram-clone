@@ -8,6 +8,7 @@ import UserCard from "../components/shared/UserCard";
 import FeedSideSuggestions from "../components/feed/FeedSideSuggestions";
 import LoadingScreen from "../components/shared/LoadingScreen";
 import { LoadingLargeIcon } from "../icons";
+import FeedPostSkeleton from "../components/feed/FeedPostSkeleton";
 
 const FeedPost = React.lazy(() => import("../components/feed/FeedPost"));
 
@@ -28,7 +29,7 @@ function FeedPage() {
         <div>
           {Array.from({ length: 5 }, () => getDefaultPost()).map(
             (post, index) => (
-              <React.Suspense key={post.id} fallback={"hello "}>
+              <React.Suspense key={post.id} fallback={<FeedPostSkeleton />}>
                 <FeedPost index={index} post={post} />
               </React.Suspense>
             )
