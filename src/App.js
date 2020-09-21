@@ -14,8 +14,12 @@ function App() {
   const history = useHistory();
   // Returns the location {} that represents the current URL
   const location = useLocation();
+
+  // synchronously keep track of the location data, previous visited  location
   const prevLocation = useRef(location);
+  // Modal data comes from location.modal, checking with a ? mark if state is undefined
   const modal = location.state?.modal;
+  console.log(history, location);
 
   useEffect(() => {
     if (history.action !== "POP" && !modal) {
@@ -23,7 +27,7 @@ function App() {
     }
   }, [history.action, location, modal]);
 
-  // If modal is true && we move to a different route than modal is open
+  // If modal is true && we move to a different route, then modal is open
   const isModalOpen = modal && prevLocation.current !== location;
 
   return (
@@ -38,6 +42,7 @@ function App() {
         <Route path="/accounts/emailsignup" component={SignUpPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
+      {/* Rendered synchronously with one of the above */}
       {isModalOpen && <Route exact path="/p/:postId" component={PostModal} />}
     </>
   );
