@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFeedPostStyles } from "../../styles";
+import { usePostStyles } from "../../styles";
 import UserCard from "../shared/UserCard";
 import {
   MoreIcon,
@@ -18,16 +18,14 @@ import {
   Divider,
   TextField,
 } from "@material-ui/core";
-import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 import FollowSuggestions from "../shared/FollowSuggestions";
 import OptionsDialog from "../shared/OptionsDialog";
+import { defaultPost } from "../data";
 
-function Post({ post, index }) {
-  const classes = useFeedPostStyles();
-  const [showCaption, setShowCaption] = useState(false);
+function Post() {
+  const classes = usePostStyles();
   const [toggleOptions, setToggleOptions] = useState(false);
-  const { media, id, caption, likes, user, comments } = post;
-  const showFollowSuggestion = index === 1;
+  const { id, likes, media, user, caption, comments } = defaultPost;
 
   function handleToggleOptions() {
     setToggleOptions(true);
