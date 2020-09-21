@@ -3,11 +3,11 @@ import { usePostModalStyles } from "../../styles";
 import Modal from "react-modal";
 import { useHistory, useParams } from "react-router-dom";
 import Post from "./Post";
+import { CloseIcon } from "../../icons";
 
 function PostModal() {
   const history = useHistory();
   const { postId } = useParams();
-  console.log(postId, "PARAMS");
   const classes = usePostModalStyles();
 
   return (
@@ -36,6 +36,9 @@ function PostModal() {
       >
         <Post id={postId} />
       </Modal>
+      <div onClick={() => history.goBack()} className={classes.close}>
+        <CloseIcon />
+      </div>
     </>
   );
 }
