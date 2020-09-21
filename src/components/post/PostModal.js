@@ -13,8 +13,9 @@ function PostModal() {
         isOpen
         overlayClassName={classes.overlay}
         onRequestClose={() => history.goBack()}
-      
       ></Modal>
-    </>}
+    </>
+  );
+}
 
 export default PostModal;
