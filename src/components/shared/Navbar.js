@@ -76,7 +76,7 @@ function Logo() {
 function Search({ history }) {
   const classes = useNavbarStyles();
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [results, setResults] = useState([]);
 
   // If it's a non-empty string👇🏻 && results isn't empty array, it it's a true then add a tooltip
