@@ -4,13 +4,15 @@ import { getDefaultPost, defaultUser } from "../../data";
 import { LoadingLargeIcon } from "../../icons";
 import { Typography } from "@material-ui/core";
 import GridPost from "../shared/GridPost";
+import { Link } from "react-router-dom";
 
 function MorePostsFromUser() {
   const classes = useMorePostsFromUserStyles();
+  const { id, username, name } = defaultUser;
   let loading = false;
 
   return (
-    <>
+    <div className={classes.container}>
       <Typography
         color="textSecondary"
         variant="subtitle2"
@@ -18,7 +20,10 @@ function MorePostsFromUser() {
         gutterBottom
         className={classes.typography}
       >
-        Explore
+        More posts from{" "}
+        <Link to={`/${username}`} className={classes.link}>
+          {`@${username}`}
+        </Link>
       </Typography>
       {loading ? (
         <LoadingLargeIcon />
@@ -31,7 +36,7 @@ function MorePostsFromUser() {
           </div>
         </article>
       )}
-    </>
+    </div>
   );
 }
 
