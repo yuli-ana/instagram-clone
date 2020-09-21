@@ -30,7 +30,7 @@ function MorePostsFromUser() {
       ) : (
         <article className={classes.article}>
           <div className={classes.postContainer}>
-            {Array.from({ length: 20 }, () => getDefaultPost()).map((post) => (
+            {Array.from({ length: 6 }, () => getDefaultPost()).map((post) => (
               <GridPost key={post.id} post={post} />
             ))}
           </div>
