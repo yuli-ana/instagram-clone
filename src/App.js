@@ -5,10 +5,10 @@ import ExplorePage from "./pages/explore";
 import FeedPage from "./pages/feed";
 import LoginPage from "./pages/login";
 import NotFoundPage from "./pages/not-found";
-import PostPage from "./pages/Post";
 import ProfilePage from "./pages/profile";
 import SignUpPage from "./pages/signup";
 import PostModal from "./components/post/PostModal";
+import PostPage from "./pages/post";
 
 function App() {
   const history = useHistory();
@@ -19,7 +19,6 @@ function App() {
   const prevLocation = useRef(location);
   // Modal data comes from location.modal, checking with a ? mark if state is undefined
   const modal = location.state?.modal;
-  console.log(history, location);
 
   useEffect(() => {
     if (history.action !== "POP" && !modal) {
