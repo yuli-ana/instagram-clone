@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import { defaultCurrentUser } from "../data";
@@ -8,6 +8,11 @@ import ProfilePicture from "../components/shared/ProfilePicture";
 function ProfilePage() {
   const isOwner = true;
   const classes = useProfilePageStyles();
+  const [showOptionsMenu, setShowOptionsMenu] = useState(false);
+
+  function handleOptionsMenuClick() {
+    setShowOptionsMenu(true);
+  }
 
   return (
     <Layout
@@ -18,7 +23,11 @@ function ProfilePage() {
           <Card>
             <ProfilePicture isOwner={isOwner} />
             <CardContent className={classes.cardContentLarge}>
-              <ProfileNameSection />
+              <ProfileNameSection
+                handleOptionsMenuClick={handleOptionsMenuClick}
+                user={defaultCurrentUser}
+                isOwner={isOwner}
+              />
               <PostCountSection />
               <NameBioSection />
             </CardContent>
@@ -28,8 +37,12 @@ function ProfilePage() {
           <Card className={classes.cardSmall}>
             <CardContent>
               <section className={classes.sectionSmall}>
-                <ProfilePicture isOwner={isOwner} />
-                <ProfileNameSection />
+                <ProfilePicture size={77} isOwner={isOwner} />
+                <ProfileNameSection
+                  handleOptionsMenuClick={handleOptionsMenuClick}
+                  user={defaultCurrentUser}
+                  isOwner={isOwner}
+                />
               </section>
               <NameBioSection />
             </CardContent>
@@ -41,7 +54,7 @@ function ProfilePage() {
   );
 }
 
-function ProfileNameSection() {
+function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
   return <>Profile Name Section</>;
 }
 
