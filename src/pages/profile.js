@@ -2,6 +2,7 @@ import React from "react";
 import { useProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import { defaultCurrentUser } from "../data";
+import { Hidden } from "@material-ui/core";
 
 function ProfilePage() {
   const classes = useProfilePageStyles();
@@ -9,7 +10,12 @@ function ProfilePage() {
   return (
     <Layout
       title={`${defaultCurrentUser.name} (@${defaultCurrentUser.username})}`}
-    ></Layout>
+    >
+      <div className={classes.container}>
+        <Hidden xsDown></Hidden>
+        <Hidden smUp>hey</Hidden>
+      </div>
+    </Layout>
   );
 }
 
