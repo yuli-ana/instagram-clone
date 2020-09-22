@@ -11,7 +11,7 @@ function ProfilePage() {
 
   return (
     <Layout
-      title={`${defaultCurrentUser.name} (@${defaultCurrentUser.username})}`}
+      title={`${defaultCurrentUser.name} (@${defaultCurrentUser.username})`}
     >
       <div className={classes.container}>
         <Hidden xsDown>
