@@ -12,6 +12,7 @@ import {
   Zoom,
   Divider,
   DialogTitle,
+  Avatar,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
@@ -167,7 +168,9 @@ function UnfollowDialog({ onClose, user }) {
       onClose={onClose}
       TransitionComponent={Zoom}
     >
-      <div></div>
+      <div className={classes.wrapper}>
+        <Avatar src={user.profile_image} alt="user avatar" />
+      </div>
     </Dialog>
   );
 }
