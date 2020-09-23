@@ -128,7 +128,9 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
           </div>
           {isOwner ? (
             <Link to="/accounts/edit">
-              <Button variant="outlined">Edit profile</Button>
+              <Button variant="outlined" style={{ width: "100%" }}>
+                Edit profile
+              </Button>
             </Link>
           ) : (
             followButton
