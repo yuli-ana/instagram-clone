@@ -158,6 +158,20 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
   );
 }
 
+function UnfollowDialog({ onClose, user }) {
+  const classes = useProfilePageStyles();
+  return (
+    <Dialog
+      open
+      classes={{ scrollPaper: classes.unfollowDialogScrollPaper }}
+      onClose={onClose}
+      TransitionComponent={Zoom}
+    >
+      <div></div>
+    </Dialog>
+  );
+}
+
 function PostCountSection() {
   return <>Post Count Section</>;
 }
