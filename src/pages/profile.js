@@ -10,6 +10,7 @@ import {
   Typography,
   Dialog,
   Zoom,
+  Divider,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
@@ -167,7 +168,12 @@ function OptionsMenu() {
 }
 
 function OptionsItem({ text, onClick }) {
-  return <></>;
+  return (
+    <>
+      <Button></Button>
+      <Divider />
+    </>
+  );
 }
 
 export default ProfilePage;
