@@ -182,6 +182,12 @@ function UnfollowDialog({ onClose, user }) {
       >
         Unfollow @{user.name}?
       </Typography>
+      <Divider />
+      <Button className={classes.unfollowButton}>Unfollow</Button>
+      <Divider />
+      <Button onClick={onClose} className={classes.cancelButton}>
+        Cancel
+      </Button>
     </Dialog>
   );
 }
