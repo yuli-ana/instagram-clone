@@ -8,7 +8,8 @@ import {
   CardContent,
   Button,
   Typography,
-  Dialog,, Zoom
+  Dialog,
+  Zoom,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
