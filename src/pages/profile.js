@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { useProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import { defaultCurrentUser } from "../data";
-import { Hidden, Card, CardContent, Button } from "@material-ui/core";
+import {
+  Hidden,
+  Card,
+  CardContent,
+  Button,
+  Typography,
+} from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
+
 
 function ProfilePage() {
   const isOwner = true;
@@ -81,7 +88,21 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
     );
   }
 
-  return <>Profile Name Section</>;
+  return (
+    <>
+      <Hidden xsDown>
+        <section className={classes.usernameSection}>
+          <Typography className={classes.username}>{user.username}</Typography>
+          {isOwner ? (
+            <>
+              <Link></Link>
+            </>
+          ) : null}
+        </section>
+      </Hidden>
+      <Hidden smUp></Hidden>
+    </>
+  );
 }
 
 function PostCountSection() {
