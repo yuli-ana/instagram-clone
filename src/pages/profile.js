@@ -8,7 +8,7 @@ import {
   CardContent,
   Button,
   Typography,
-  Dialog,
+  Dialog,, Zoom
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
@@ -153,7 +153,16 @@ function NameBioSection() {
 function OptionsMenu() {
   const classes = useProfilePageStyles();
 
-  return <Dialog></Dialog>;
+  return (
+    <Dialog
+      open
+      classes={{
+        scrollPaper: classes.dialogScrollPaper,
+        paper: classes.dialogPaper,
+      }}
+      TransitionComponent={Zoom}
+    ></Dialog>
+  );
 }
 
 export default ProfilePage;
