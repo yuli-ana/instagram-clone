@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { GearIcon } from "../icons";
 
 function ProfilePage() {
-  const isOwner = true;
+  const isOwner = false;
   const classes = useProfilePageStyles();
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
 
@@ -73,14 +73,19 @@ function ProfilePage() {
 
 function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
   const classes = useProfilePageStyles();
+  const [showUnFollowDialog, setUnFollowDialog] = useState(false);
 
   let followButton;
-  const isFollowing = false;
+  const isFollowing = true;
   const isFollower = false;
 
   if (isFollowing) {
     followButton = (
-      <Button variant="outlined" className={classes.button}>
+      <Button
+        onClick={() => setUnFollowDialog(true)}
+        variant="outlined"
+        className={classes.button}
+      >
         Following
       </Button>
     );
@@ -146,6 +151,9 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
           )}
         </section>
       </Hidden>
+      {showUnFollowDialog && (
+        <UnfollowDialog onClose={() => setUnFollowDialog(false)} />
+      )}
     </>
   );
 }
