@@ -158,7 +158,7 @@ function NameBioSection() {
   return <>Name Bio Section</>;
 }
 
-function OptionsMenu({}) {
+function OptionsMenu({ handleCloseMenu }) {
   const classes = useProfilePageStyles();
   const [showLogOutMessage, setLogOutMessage] = useState(false);
 
@@ -190,7 +190,7 @@ function OptionsMenu({}) {
           <OptionsItem text="Notifications" />
           <OptionsItem text="Privacy and Security" />
           <OptionsItem onClick={handleLogOutClick} text="Log out" />
-          <OptionsItem text="Cancel" />
+          <OptionsItem text="Cancel" onClick={handleCloseMenu} />
         </>
       )}
     </Dialog>
