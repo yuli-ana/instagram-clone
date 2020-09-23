@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import { defaultCurrentUser } from "../data";
-import { Hidden, Card, CardContent } from "@material-ui/core";
+import { Hidden, Card, CardContent, Button } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 
 function ProfilePage() {
@@ -55,6 +55,32 @@ function ProfilePage() {
 }
 
 function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
+  const classes = useProfilePageStyles();
+
+  let followButton;
+  const isFollowing = false;
+  const isFollower = false;
+
+  if (isFollowing) {
+    followButton = (
+      <Button variant="outlined" className={classes.button}>
+        Following
+      </Button>
+    );
+  } else if (isFollower) {
+    followButton = (
+      <Button variant="contained" className={classes.button}>
+        Follow back
+      </Button>
+    );
+  } else {
+    followButton = (
+      <Button variant="contained" className={classes.button}>
+        Follow
+      </Button>
+    );
+  }
+
   return <>Profile Name Section</>;
 }
 
