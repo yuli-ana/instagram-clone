@@ -153,7 +153,7 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
         </section>
       </Hidden>
       {showUnFollowDialog && (
-        <UnfollowDialog onClose={() => setUnFollowDialog(false)} />
+        <UnfollowDialog user={user} onClose={() => setUnFollowDialog(false)} />
       )}
     </>
   );
@@ -169,8 +169,19 @@ function UnfollowDialog({ onClose, user }) {
       TransitionComponent={Zoom}
     >
       <div className={classes.wrapper}>
-        <Avatar src={user.profile_image} alt="user avatar" />
+        <Avatar
+          src={user.profile_image}
+          alt={`${user.username}'s avatar`}
+          className={classes.avatar}
+        />
       </div>
+      <Typography
+        align="center"
+        className={classes.unfollowDialogText}
+        variant="body2"
+      >
+        Unfollow @{user.name}?
+      </Typography>
     </Dialog>
   );
 }
