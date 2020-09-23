@@ -103,10 +103,12 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
                 onClick={handleOptionsMenuClick}
                 className={classes.settingsWrapper}
               >
-                <GearIcon />
+                <GearIcon className={classes.settings} />
               </div>
             </>
-          ) : null}
+          ) : (
+            <>{followButton}</>
+          )}
         </section>
       </Hidden>
       <Hidden smUp></Hidden>
