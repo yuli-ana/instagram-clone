@@ -11,6 +11,7 @@ import {
   Dialog,
   Zoom,
   Divider,
+  DialogTitle,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
@@ -154,6 +155,11 @@ function NameBioSection() {
 
 function OptionsMenu() {
   const classes = useProfilePageStyles();
+  const [showLogOutMessage, setLogOutMessage] = useState(false);
+
+  function handleLogOutClick() {
+    setLogOutMessage(true);
+  }
 
   return (
     <Dialog
@@ -164,13 +170,14 @@ function OptionsMenu() {
       }}
       TransitionComponent={Zoom}
     >
+      {showLogOutMessage && <DialogTitle></DialogTitle>}
       <OptionsItem text="Change password" />
       <OptionsItem text="Nametag" />
       <OptionsItem text="Apps and Websites" />
       <OptionsItem text="Notifications" />
       <OptionsItem text="Privacy and Security" />
-      <OptionsItem text="Login Activity" />
-      <OptionsItem text="Emails from Instagram" />
+      <OptionsItem onClick={handleLogOutClick} text="Log out" />
+      <OptionsItem text="Change password" />
     </Dialog>
   );
 }
