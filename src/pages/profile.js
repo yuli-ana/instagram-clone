@@ -163,14 +163,24 @@ function OptionsMenu() {
         paper: classes.dialogPaper,
       }}
       TransitionComponent={Zoom}
-    ></Dialog>
+    >
+      <OptionsItem text="Change password" />
+      <OptionsItem text="Nametag" />
+      <OptionsItem text="Apps and Websites" />
+      <OptionsItem text="Notifications" />
+      <OptionsItem text="Privacy and Security" />
+      <OptionsItem text="Login Activity" />
+      <OptionsItem text="Emails from Instagram" />
+    </Dialog>
   );
 }
 
 function OptionsItem({ text, onClick }) {
   return (
     <>
-      <Button></Button>
+      <Button style={{ padding: "12px 8px" }} onClick={onClick}>
+        {text}
+      </Button>
       <Divider />
     </>
   );
