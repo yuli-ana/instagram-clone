@@ -166,4 +166,8 @@ function OptionsMenu() {
   );
 }
 
+function OptionsItem({ text, onClick }) {
+  return <></>;
+}
+
 export default ProfilePage;
