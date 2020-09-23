@@ -8,6 +8,7 @@ import {
   CardContent,
   Button,
   Typography,
+  Dialog,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
@@ -147,6 +148,12 @@ function PostCountSection() {
 
 function NameBioSection() {
   return <>Name Bio Section</>;
+}
+
+function OptionsMenu() {
+  const classes = useProfilePageStyles();
+
+  return <Dialog></Dialog>;
 }
 
 export default ProfilePage;
