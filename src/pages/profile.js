@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
-
+import { Link } from "react-router-dom";
 
 function ProfilePage() {
   const isOwner = true;
