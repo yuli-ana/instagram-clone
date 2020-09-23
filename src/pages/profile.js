@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
+import { GearIcon } from "../icons";
 
 function ProfilePage() {
   const isOwner = true;
@@ -98,6 +99,12 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
               <Link to="/accounts/edit">
                 <Button variant="outlined">Edit profile</Button>
               </Link>
+              <div
+                onClick={handleOptionsMenuClick}
+                className={classes.settingsWrapper}
+              >
+                <GearIcon />
+              </div>
             </>
           ) : null}
         </section>
