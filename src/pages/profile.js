@@ -170,14 +170,24 @@ function OptionsMenu() {
       }}
       TransitionComponent={Zoom}
     >
-      {showLogOutMessage && <DialogTitle></DialogTitle>}
-      <OptionsItem text="Change password" />
-      <OptionsItem text="Nametag" />
-      <OptionsItem text="Apps and Websites" />
-      <OptionsItem text="Notifications" />
-      <OptionsItem text="Privacy and Security" />
-      <OptionsItem onClick={handleLogOutClick} text="Log out" />
-      <OptionsItem text="Change password" />
+      {showLogOutMessage ? (
+        <DialogTitle className={classes.dialog}>
+          Logging out
+          <Typography color="textSecondary">
+            You need to log back in to continue using Instagram
+          </Typography>
+        </DialogTitle>
+      ) : (
+        <>
+          <OptionsItem text="Change password" />
+          <OptionsItem text="Nametag" />
+          <OptionsItem text="Apps and Websites" />
+          <OptionsItem text="Notifications" />
+          <OptionsItem text="Privacy and Security" />
+          <OptionsItem onClick={handleLogOutClick} text="Log out" />
+          <OptionsItem text="Change password" />
+        </>
+      )}
     </Dialog>
   );
 }
