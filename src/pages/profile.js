@@ -95,7 +95,9 @@ function ProfileNameSection({ user, isOwner, handleOptionsMenuClick }) {
           <Typography className={classes.username}>{user.username}</Typography>
           {isOwner ? (
             <>
-              <Link></Link>
+              <Link to="/accounts/edit">
+                <Button variant="outlined">Edit profile</Button>
+              </Link>
             </>
           ) : null}
         </section>
