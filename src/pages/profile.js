@@ -26,6 +26,10 @@ function ProfilePage() {
     setShowOptionsMenu(true);
   }
 
+  function handleCloseMenu() {
+    setShowOptionsMenu(false);
+  }
+
   return (
     <Layout
       title={`${defaultCurrentUser.name} (@${defaultCurrentUser.username})`}
@@ -61,6 +65,7 @@ function ProfilePage() {
             <PostCountSection />
           </Card>
         </Hidden>
+        {showOptionsMenu && <OptionsMenu handleCloseMenu={handleCloseMenu} />}
       </div>
     </Layout>
   );
@@ -153,7 +158,7 @@ function NameBioSection() {
   return <>Name Bio Section</>;
 }
 
-function OptionsMenu() {
+function OptionsMenu({}) {
   const classes = useProfilePageStyles();
   const [showLogOutMessage, setLogOutMessage] = useState(false);
 
@@ -185,7 +190,7 @@ function OptionsMenu() {
           <OptionsItem text="Notifications" />
           <OptionsItem text="Privacy and Security" />
           <OptionsItem onClick={handleLogOutClick} text="Log out" />
-          <OptionsItem text="Change password" />
+          <OptionsItem text="Cancel" />
         </>
       )}
     </Dialog>
