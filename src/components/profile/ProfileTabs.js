@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useProfileTabsStyles } from "../../styles";
 import { Hidden, Divider, Tabs, Tab } from "@material-ui/core";
+import { GridIcon } from "../../icons";
 
 function ProfileTabs({ isOwner, user }) {
   const classes = useProfileTabsStyles();
@@ -43,7 +44,40 @@ function ProfileTabs({ isOwner, user }) {
             )}
           </Tabs>
         </Hidden>
-        <Hidden smUp></Hidden>
+        <Hidden smUp>
+          <Tabs
+            value={value}
+            onChange={(_, value) => setValue(value)}
+            centered
+            className={classes.tabs}
+            classes={{
+              indicator: classes.tabsIndicator,
+            }}
+          >
+            <Tab
+              icon={
+                <GridIcon
+                  fill={value === 0 ? "3897f0" : undefined}
+                  classes={{
+                    root: classes.tabRoot,
+                  }}
+                />
+              }
+            />
+            {isOwner && (
+              <Tab
+                icon={
+                  <GridIcon
+                    fill={value === 1 ? "3897f0" : undefined}
+                    classes={{
+                      root: classes.tabRoot,
+                    }}
+                  />
+                }
+              />
+            )}
+          </Tabs>
+        </Hidden>
       </section>
     </>
   );
