@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useProfileTabsStyles } from "../../styles";
 import { Hidden, Divider, Tabs, Tab } from "@material-ui/core";
-import { GridIcon } from "../../icons";
+import { GridIcon, SaveIcon } from "../../icons";
 
 function ProfileTabs({ isOwner, user }) {
   const classes = useProfileTabsStyles();
@@ -62,7 +62,7 @@ function ProfileTabs({ isOwner, user }) {
             />
             {isOwner && (
               <Tab
-                icon={<GridIcon fill={value === 1 ? "#3897f0" : undefined} />}
+                icon={<SaveIcon fill={value === 1 ? "#3897f0" : undefined} />}
                 classes={{
                   root: classes.tabRoot,
                 }}
