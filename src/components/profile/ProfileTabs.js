@@ -112,7 +112,7 @@ function SavedPosts({ isOwner }) {
   return (
     <section className={classes.savedPostsSection}>
       <div className={classes.noContent}>
-        <div className={classes.savedPhotoIcon} />
+        <div className={classes.savePhotoIcon} />
         <Typography variant="h4">Save</Typography>
         <Typography align="center">
           Save photos and videos that you want to see again. No one is notified,
