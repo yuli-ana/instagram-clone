@@ -92,7 +92,15 @@ function ProfilePosts({ user, isOwner }) {
     );
   }
 
-  return <></>;
+  return (
+    <article className={classes.article}>
+      <div className={classes.postContainer}>
+        {user.posts.map((post) => (
+          <GridPost key={post.id} post={post} />
+        ))}
+      </div>
+    </article>
+  );
 }
 
 function SavedPosts({ user, isOwner }) {
