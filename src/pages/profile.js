@@ -45,8 +45,8 @@ function ProfilePage() {
                 user={defaultCurrentUser}
                 isOwner={isOwner}
               />
-              <PostCountSection />
-              <NameBioSection />
+              <PostCountSection user={defaultCurrentUser} />
+              <NameBioSection user={defaultCurrentUser} />
             </CardContent>
           </Card>
         </Hidden>
@@ -61,9 +61,9 @@ function ProfilePage() {
                   isOwner={isOwner}
                 />
               </section>
-              <NameBioSection />
+              <NameBioSection user={defaultCurrentUser} />
             </CardContent>
-            <PostCountSection />
+            <PostCountSection user={defaultCurrentUser} />
           </Card>
         </Hidden>
         {showOptionsMenu && <OptionsMenu handleCloseMenu={handleCloseMenu} />}
@@ -192,8 +192,27 @@ function UnfollowDialog({ onClose, user }) {
   );
 }
 
-function PostCountSection() {
-  return <>Post Count Section</>;
+function PostCountSection({ user }) {
+  const classes = useProfilePageStyles();
+  const options = ["posts", "followers", " following"];
+
+  return (
+    <>
+      <Hidden smUp>
+        <Divider />
+      </Hidden>
+      <section className={classes.followingSection}>
+        {options.map((option) => (
+          <div key={option} className={classes.followingText}>
+            <Typography className={classes.followingCount}></Typography>
+          </div>
+        ))}
+      </section>
+      <Hidden smUp>
+        <Divider />
+      </Hidden>
+    </>
+  );
 }
 
 function NameBioSection() {
