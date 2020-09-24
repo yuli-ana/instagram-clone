@@ -55,25 +55,17 @@ function ProfileTabs({ isOwner, user }) {
             }}
           >
             <Tab
-              icon={
-                <GridIcon
-                  fill={value === 0 ? "3897f0" : undefined}
-                  classes={{
-                    root: classes.tabRoot,
-                  }}
-                />
-              }
+              icon={<GridIcon fill={value === 0 ? "#3897f0" : undefined} />}
+              classes={{
+                root: classes.tabRoot,
+              }}
             />
             {isOwner && (
               <Tab
-                icon={
-                  <GridIcon
-                    fill={value === 1 ? "3897f0" : undefined}
-                    classes={{
-                      root: classes.tabRoot,
-                    }}
-                  />
-                }
+                icon={<GridIcon fill={value === 1 ? "#3897f0" : undefined} />}
+                classes={{
+                  root: classes.tabRoot,
+                }}
               />
             )}
           </Tabs>
