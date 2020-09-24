@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useProfileTabsStyles } from "../../styles";
-import { Hidden, Divider, Tabs } from "@material-ui/core";
+import { Hidden, Divider, Tabs, Tab } from "@material-ui/core";
 
 function ProfileTabs({ isOwner, user }) {
   const classes = useProfileTabsStyles();
@@ -13,7 +13,16 @@ function ProfileTabs({ isOwner, user }) {
           <Divider />
         </Hidden>
         <Hidden xsDown>
-          <Tabs></Tabs>
+          <Tabs
+            value={value}
+            onChange={(_, value) => setValue(value)}
+            centered
+            classes={{
+              indicator: classes.tabsIndicator,
+            }}
+          >
+            <Tab></Tab>
+          </Tabs>
         </Hidden>
       </section>
     </>
