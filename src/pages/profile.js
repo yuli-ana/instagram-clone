@@ -20,7 +20,7 @@ import { GearIcon } from "../icons";
 import ProfileTabs from "../components/profile/ProfileTabs";
 
 function ProfilePage() {
-  const isOwner = false;
+  const isOwner = true;
   const classes = useProfilePageStyles();
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
 

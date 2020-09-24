@@ -23,7 +23,7 @@ function ProfileTabs({ isOwner, user }) {
             }}
           >
             <Tab
-              icon={<span className={classes.postIconLarge} />}
+              icon={<span className={classes.postsIconLarge} />}
               label="POSTS"
               classes={{
                 root: classes.tabRoot,
