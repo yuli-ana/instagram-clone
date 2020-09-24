@@ -24,11 +24,26 @@ function ProfileTabs({ isOwner, user }) {
             <Tab
               icon={<span className={classes.postIconLarge} />}
               label="POSTS"
-              classes={{}}
+              classes={{
+                root: classes.tabRoot,
+                labelIcon: classes.tabLabelIcon,
+                wrapper: classes.tabWrapper,
+              }}
             />
-            <Tab />
+            {isOwner && (
+              <Tab
+                icon={<span className={classes.savedIconLarge} />}
+                label="SAVED"
+                classes={{
+                  root: classes.tabRoot,
+                  labelIcon: classes.tabLabelIcon,
+                  wrapper: classes.tabWrapper,
+                }}
+              />
+            )}
           </Tabs>
         </Hidden>
+        <Hidden smUp></Hidden>
       </section>
     </>
   );
