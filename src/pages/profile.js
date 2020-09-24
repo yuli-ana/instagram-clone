@@ -194,7 +194,7 @@ function UnfollowDialog({ onClose, user }) {
 
 function PostCountSection({ user }) {
   const classes = useProfilePageStyles();
-  const options = ["posts", "followers", " following"];
+  const options = ["posts", "followers", "following"];
 
   return (
     <>
@@ -205,8 +205,14 @@ function PostCountSection({ user }) {
         {options.map((option) => (
           <div key={option} className={classes.followingText}>
             <Typography className={classes.followingCount}>
-              {user[option].length}
+              {user[option] && user[option].length}
             </Typography>
+            <Hidden xsDown>
+              <Typography>{option}</Typography>
+            </Hidden>
+            <Hidden smUp>
+              <Typography color="textSecondary">{option}</Typography>
+            </Hidden>
           </div>
         ))}
       </section>
