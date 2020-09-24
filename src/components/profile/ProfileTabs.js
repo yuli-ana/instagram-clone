@@ -87,7 +87,9 @@ function ProfilePosts({ user, isOwner }) {
       <section className={classes.profilePostsSection}>
         <div className={classes.noContent}>
           <div className={classes.uploadPhotoIcon} />
-          <Typography>{isOwner ? "Upload a Photo" : "No Photos"}</Typography>
+          <Typography variant="h4">
+            {isOwner ? "Upload a Photo" : "No Photos"}
+          </Typography>
         </div>
       </section>
     );
@@ -108,10 +110,14 @@ function SavedPosts({ isOwner }) {
   const classes = useProfileTabsStyles();
 
   return (
-    <section className={classes.profilePostsSection}>
+    <section className={classes.savedPostsSection}>
       <div className={classes.noContent}>
-        <div className={classes.uploadPhotoIcon} />
-        <Typography>{isOwner ? "Upload a Photo" : "No Photos"}</Typography>
+        <div className={classes.savedPhotoIcon} />
+        <Typography variant="h4">Save</Typography>
+        <Typography align="center">
+          Save photos and videos that you want to see again. No one is notified,
+          and only you can see what you've saved.
+        </Typography>
       </div>
     </section>
   );
