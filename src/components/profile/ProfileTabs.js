@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useProfileTabsStyles } from "../../styles";
-import { Hidden, Divider, Tabs, Tab } from "@material-ui/core";
+import { Hidden, Divider, Tabs, Tab, Typography } from "@material-ui/core";
 import { GridIcon, SaveIcon } from "../../icons";
 
 function ProfileTabs({ isOwner, user }) {
@@ -71,18 +71,33 @@ function ProfileTabs({ isOwner, user }) {
           </Tabs>
         </Hidden>
         <Hidden smUp>{user.posts.length === 0 && <Divider />}</Hidden>
-        {value === 0 && <ProfilePosts user={user} />}
-        {value === 1 && <SavedPosts user={user} />}
+        {value === 0 && <ProfilePosts user={user} isOwner={isOwner} />}
+        {value === 1 && <SavedPosts user={user} isOwner={isOwner} />}
       </section>
     </>
   );
 }
 
-function ProfilePosts() {
+function ProfilePosts({ user, isOwner }) {
+  const classes = useProfileTabsStyles();
+
+  if (user.posts.length === 0) {
+    return (
+      <section className={classes.profilePostsSection}>
+        <div className={classes.noContent}>
+          <div className={classes.uploadPhotoIcon} />
+          <Typography></Typography>
+        </div>
+      </section>
+    );
+  }
+
   return <></>;
 }
 
-function SavedPosts() {
+function SavedPosts({ user, isOwner }) {
+  const classes = useProfileTabsStyles();
+
   return <></>;
 }
 
