@@ -223,8 +223,15 @@ function PostCountSection({ user }) {
   );
 }
 
-function NameBioSection() {
-  return <>Name Bio Section</>;
+function NameBioSection({ user }) {
+  const classes = useProfilePageStyles();
+
+  return (
+    <section className={classes.section}>
+      <Typography className={classes.typography}>{user.name}</Typography>
+      <Typography>{user.bio}</Typography>
+    </section>
+  );
 }
 
 function OptionsMenu({ handleCloseMenu }) {
