@@ -86,7 +86,7 @@ function ProfilePosts({ user, isOwner }) {
       <section className={classes.profilePostsSection}>
         <div className={classes.noContent}>
           <div className={classes.uploadPhotoIcon} />
-          <Typography></Typography>
+          <Typography>{isOwner ? "Upload a Photo" : "No Photos"}</Typography>
         </div>
       </section>
     );
