@@ -107,7 +107,14 @@ function ProfilePosts({ user, isOwner }) {
 function SavedPosts({ user, isOwner }) {
   const classes = useProfileTabsStyles();
 
-  return <></>;
+  return (
+    <section className={classes.profilePostsSection}>
+      <div className={classes.noContent}>
+        <div className={classes.uploadPhotoIcon} />
+        <Typography>{isOwner ? "Upload a Photo" : "No Photos"}</Typography>
+      </div>
+    </section>
+  );
 }
 
 export default ProfileTabs;
