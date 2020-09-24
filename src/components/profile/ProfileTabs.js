@@ -78,6 +78,7 @@ function ProfileTabs({ isOwner, user }) {
             )}
           </Tabs>
         </Hidden>
+        <Hidden smUp>{user.posts.length === 0 && <Divider />}</Hidden>
       </section>
     </>
   );
