@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useProfileTabsStyles } from "../../styles";
 import { Hidden, Divider, Tabs, Tab, Typography } from "@material-ui/core";
 import { GridIcon, SaveIcon } from "../../icons";
+import GridPost from "../shared/GridPost";
 
 function ProfileTabs({ isOwner, user }) {
   const classes = useProfileTabsStyles();
