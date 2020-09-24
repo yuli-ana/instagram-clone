@@ -21,7 +21,12 @@ function ProfileTabs({ isOwner, user }) {
               indicator: classes.tabsIndicator,
             }}
           >
-            <Tab></Tab>
+            <Tab
+              icon={<span className={classes.postIconLarge} />}
+              label="POSTS"
+              classes={{}}
+            />
+            <Tab />
           </Tabs>
         </Hidden>
       </section>
