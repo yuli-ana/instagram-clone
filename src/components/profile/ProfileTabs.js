@@ -71,9 +71,19 @@ function ProfileTabs({ isOwner, user }) {
           </Tabs>
         </Hidden>
         <Hidden smUp>{user.posts.length === 0 && <Divider />}</Hidden>
+        {value === 0 && <ProfilePosts user={user} />}
+        {value === 1 && <SavedPosts user={user} />}
       </section>
     </>
   );
+}
+
+function ProfilePosts() {
+  return <></>;
+}
+
+function SavedPosts() {
+  return <></>;
 }
 
 export default ProfileTabs;
