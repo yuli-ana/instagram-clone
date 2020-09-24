@@ -73,7 +73,7 @@ function ProfileTabs({ isOwner, user }) {
         </Hidden>
         <Hidden smUp>{user.posts.length === 0 && <Divider />}</Hidden>
         {value === 0 && <ProfilePosts user={user} isOwner={isOwner} />}
-        {value === 1 && <SavedPosts user={user} isOwner={isOwner} />}
+        {value === 1 && <SavedPosts isOwner={isOwner} />}
       </section>
     </>
   );
@@ -104,7 +104,7 @@ function ProfilePosts({ user, isOwner }) {
   );
 }
 
-function SavedPosts({ user, isOwner }) {
+function SavedPosts({ isOwner }) {
   const classes = useProfileTabsStyles();
 
   return (
