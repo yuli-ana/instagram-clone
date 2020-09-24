@@ -1,8 +1,8 @@
 import React from "react";
 import { useProfileTabsStyles } from "../../styles";
 
-function ProfileTabs() {
-  useProfileTabsStyles();
+function ProfileTabs({ isOwner, user }) {
+  const classes = useProfileTabsStyles();
 
   return <div>ProfileTabs</div>;
 }

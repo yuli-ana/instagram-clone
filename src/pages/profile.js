@@ -49,7 +49,6 @@ function ProfilePage() {
               <PostCountSection user={defaultCurrentUser} />
               <NameBioSection user={defaultCurrentUser} />
             </CardContent>
-            <ProfileTabs></ProfileTabs>
           </Card>
         </Hidden>
         <Hidden smUp>
@@ -69,6 +68,7 @@ function ProfilePage() {
           </Card>
         </Hidden>
         {showOptionsMenu && <OptionsMenu handleCloseMenu={handleCloseMenu} />}
+        <ProfileTabs user={defaultCurrentUser} isOwner={isOwner} />
       </div>
     </Layout>
   );
