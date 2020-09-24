@@ -17,6 +17,7 @@ import {
 import ProfilePicture from "../components/shared/ProfilePicture";
 import { Link } from "react-router-dom";
 import { GearIcon } from "../icons";
+import ProfileTabs from "../components/profile/ProfileTabs";
 
 function ProfilePage() {
   const isOwner = false;
@@ -48,6 +49,7 @@ function ProfilePage() {
               <PostCountSection user={defaultCurrentUser} />
               <NameBioSection user={defaultCurrentUser} />
             </CardContent>
+            <ProfileTabs></ProfileTabs>
           </Card>
         </Hidden>
         <Hidden smUp>
