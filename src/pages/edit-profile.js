@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEditProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
-import { IconButton, Hidden, Drawer, List } from "@material-ui/core";
+import { IconButton, Hidden, Drawer, List, ListItem } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
 function EditProfilePage() {
@@ -24,7 +24,15 @@ function EditProfilePage() {
     "Emails from Instagram",
   ];
 
-  const drawer = <List></List>;
+  const drawer = (
+    <List>
+      {options.map((option, i) => (
+        <ListItem button key={option} selected={i}>
+          {option}
+        </ListItem>
+      ))}
+    </List>
+  );
 
   return (
     <Layout title="Edit profile">
@@ -47,7 +55,9 @@ function EditProfilePage() {
               classes={{
                 paperAnchorLeft: classes.temporaryDrawer,
               }}
-            ></Drawer>
+            >
+              {showDrawer && drawer}
+            </Drawer>
           </Hidden>
         </nav>
       </section>
