@@ -4,12 +4,23 @@ import Layout from "../components/shared/Layout";
 import { IconButton, Hidden, Drawer, List, ListItem } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
-function EditProfilePage() {
+function EditProfilePage({ history }) {
   const classes = useEditProfilePageStyles();
   const [showDrawer, setDrawer] = useState(false);
 
   function handleToggleDrawer() {
     setDrawer((prev) => !prev);
+  }
+
+  function handleSelected(index) {
+    const path = history.location.pathname;
+
+    switch (index) {
+      case 0:
+        return path.includes("edit");
+      default:
+        break;
+    }
   }
 
   const options = [
@@ -27,7 +38,7 @@ function EditProfilePage() {
   const drawer = (
     <List>
       {options.map((option, i) => (
-        <ListItem button key={option} selected={i}>
+        <ListItem button key={option} selected={handleSelected(i)}>
           {option}
         </ListItem>
       ))}
