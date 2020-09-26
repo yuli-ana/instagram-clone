@@ -35,10 +35,25 @@ function EditProfilePage({ history }) {
     "Emails from Instagram",
   ];
 
+  function handleListClick(index) {
+    switch (index) {
+      case 0:
+        history.push("/accounts/edit");
+        break;
+      default:
+        break;
+    }
+  }
+
   const drawer = (
     <List>
       {options.map((option, i) => (
-        <ListItem button key={option} selected={handleSelected(i)}>
+        <ListItem
+          button
+          key={option}
+          selected={handleSelected(i)}
+          onClick={() => handleListClick(i)}
+        >
           {option}
         </ListItem>
       ))}
