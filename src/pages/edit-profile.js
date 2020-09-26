@@ -53,6 +53,10 @@ function EditProfilePage({ history }) {
           key={option}
           selected={handleSelected(i)}
           onClick={() => handleListClick(i)}
+          classes={{
+            selected: classes.listItemSelected,
+            button: classes.listItemButton,
+          }}
         >
           {option}
         </ListItem>
