@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEditProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
-import { IconButton, MenuIcon } from "@material-ui/core";
+import { IconButton, Hidden, Drawer } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
 function EditProfilePage() {
@@ -23,6 +23,19 @@ function EditProfilePage() {
         >
           <Menu />
         </IconButton>
+        <nav>
+          <Hidden smUp implementation="css">
+            <Drawer
+              variant="temporary"
+              anchor="left"
+              open={showDrawer}
+              onClose={handleToggleDrawer}
+              classes={{
+                paperAnchorLeft: classes.temporaryDrawer,
+              }}
+            ></Drawer>
+          </Hidden>
+        </nav>
       </section>
     </Layout>
   );
