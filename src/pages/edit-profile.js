@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useEditProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
-import { IconButton } from "@material-ui/core";
+import { IconButton, MenuIcon } from "@material-ui/core";
+import { Menu } from "@material-ui/icons";
 
 function EditProfilePage() {
   const classes = useEditProfilePageStyles();
@@ -15,7 +16,13 @@ function EditProfilePage() {
     <Layout title="Edit profile">
       <section className={classes.section}>
         {/* MaterialUI */}
-        <IconButton edge="start"></IconButton>
+        <IconButton
+          edge="start"
+          onClick={handleToggleDrawer}
+          className={classes.menuButton}
+        >
+          <Menu />
+        </IconButton>
       </section>
     </Layout>
   );
