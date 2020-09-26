@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEditProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
-import { IconButton, Hidden, Drawer } from "@material-ui/core";
+import { IconButton, Hidden, Drawer, List } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
 function EditProfilePage() {
@@ -11,6 +11,20 @@ function EditProfilePage() {
   function handleToggleDrawer() {
     setDrawer((prev) => !prev);
   }
+
+  const options = [
+    "Edit Profile",
+    "Change Password",
+    " Apps and Websites",
+    "Email and SMS",
+    "Push Notifications",
+    " Manage Contacts",
+    "Privacy and Security",
+    "Login Activity",
+    "Emails from Instagram",
+  ];
+
+  const drawer = <List></List>;
 
   return (
     <Layout title="Edit profile">
