@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { useEditProfilePageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
-import { IconButton, Hidden, Drawer, List, ListItem } from "@material-ui/core";
+import {
+  IconButton,
+  Hidden,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
 function EditProfilePage({ history }) {
@@ -58,7 +65,7 @@ function EditProfilePage({ history }) {
             button: classes.listItemButton,
           }}
         >
-          {option}
+          <ListItemText primary={option} />
         </ListItem>
       ))}
     </List>
@@ -86,7 +93,7 @@ function EditProfilePage({ history }) {
                 paperAnchorLeft: classes.temporaryDrawer,
               }}
             >
-              {showDrawer && drawer}
+              {drawer}
             </Drawer>
           </Hidden>
         </nav>
