@@ -102,12 +102,12 @@ function EditProfilePage({ history }) {
             className={classes.permanentDrawerRoot}
           >
             <Drawer
-              variant="temporary"
+              variant="permanent"
               anchor="left"
-              open={showDrawer}
-              onClose={handleToggleDrawer}
+              open
               classes={{
-                paperAnchorLeft: classes.temporaryDrawer,
+                paper: classes.permanentDrawerPaper,
+                root: classes.permanentDrawerRoot,
               }}
             >
               {drawer}
