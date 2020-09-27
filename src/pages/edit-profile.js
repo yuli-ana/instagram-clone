@@ -121,4 +121,8 @@ function EditProfilePage({ history }) {
   );
 }
 
+function EditUserInfro() {
+  return {};
+}
+
 export default EditProfilePage;
