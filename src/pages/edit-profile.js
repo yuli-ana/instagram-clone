@@ -114,6 +114,7 @@ function EditProfilePage({ history }) {
             </Drawer>
           </Hidden>
         </nav>
+        <main></main>
       </section>
     </Layout>
   );
