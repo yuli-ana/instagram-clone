@@ -13,6 +13,7 @@ import { Menu } from "@material-ui/icons";
 
 function EditProfilePage({ history }) {
   const classes = useEditProfilePageStyles();
+  const path = history.location.pathname;
   const [showDrawer, setDrawer] = useState(false);
 
   function handleToggleDrawer() {
@@ -20,8 +21,6 @@ function EditProfilePage({ history }) {
   }
 
   function handleSelected(index) {
-    const path = history.location.pathname;
-
     switch (index) {
       case 0:
         return path.includes("edit");
@@ -114,7 +113,9 @@ function EditProfilePage({ history }) {
             </Drawer>
           </Hidden>
         </nav>
-        <main></main>
+        <main>
+          {path.includes("edit") && <EditUserInfo user={defaultCUrrentUser} />}
+        </main>
       </section>
     </Layout>
   );
