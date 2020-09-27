@@ -96,6 +96,23 @@ function EditProfilePage({ history }) {
               {drawer}
             </Drawer>
           </Hidden>
+          <Hidden
+            xsDown
+            implementation="css"
+            className={classes.permanentDrawerRoot}
+          >
+            <Drawer
+              variant="temporary"
+              anchor="left"
+              open={showDrawer}
+              onClose={handleToggleDrawer}
+              classes={{
+                paperAnchorLeft: classes.temporaryDrawer,
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
         </nav>
       </section>
     </Layout>
