@@ -10,6 +10,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
+import { defaultCurrentUser } from "../data";
 
 function EditProfilePage({ history }) {
   const classes = useEditProfilePageStyles();
@@ -114,14 +115,14 @@ function EditProfilePage({ history }) {
           </Hidden>
         </nav>
         <main>
-          {path.includes("edit") && <EditUserInfo user={defaultCUrrentUser} />}
+          {path.includes("edit") && <EditUserInfo user={defaultCurrentUser} />}
         </main>
       </section>
     </Layout>
   );
 }
 
-function EditUserInfro() {
+function EditUserInfo() {
   return {};
 }
 
