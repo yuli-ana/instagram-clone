@@ -132,9 +132,19 @@ function EditUserInfo({ user }) {
       <div className={classes.pictureSectionItem}>
         <ProfilePicture size={38} user={user} />
         <div className={classes.justifySelfStart}>
-          <Typography className={classes.typography}></Typography>
+          <Typography className={classes.typography}>
+            {user.username}
+          </Typography>
+          <Typography
+            className={classes.typographyChangePic}
+            variant="body2"
+            color="primary"
+          >
+            Change Profile Photo
+          </Typography>
         </div>
       </div>
+      <form></form>
     </section>
   );
 }
