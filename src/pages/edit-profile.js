@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
+import ProfilePicture from "../components/shared/ProfilePicture";
 
 function EditProfilePage({ history }) {
   const classes = useEditProfilePageStyles();
@@ -122,8 +123,16 @@ function EditProfilePage({ history }) {
   );
 }
 
-function EditUserInfo() {
-  return {};
+function EditUserInfo({ user }) {
+  const classes = useEditProfilePageStyles();
+
+  return (
+    <section className={classes.container}>
+      <div className={classes.pictureSectionItem}>
+        <ProfilePicture size={60} />
+      </div>
+    </section>
+  );
 }
 
 export default EditProfilePage;
