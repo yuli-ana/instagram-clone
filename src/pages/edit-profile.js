@@ -8,6 +8,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Typography,
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
@@ -129,7 +130,10 @@ function EditUserInfo({ user }) {
   return (
     <section className={classes.container}>
       <div className={classes.pictureSectionItem}>
-        <ProfilePicture size={60} />
+        <ProfilePicture size={38} user={user} />
+        <div className={classes.justifySelfStart}>
+          <Typography className={classes.typography}></Typography>
+        </div>
       </div>
     </section>
   );
