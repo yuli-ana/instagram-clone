@@ -144,7 +144,7 @@ function EditUserInfo({ user }) {
           </Typography>
         </div>
       </div>
-      <form></form>
+      <form className={classes.form}></form>
     </section>
   );
 }
