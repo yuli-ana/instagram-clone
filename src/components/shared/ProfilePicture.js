@@ -5,7 +5,7 @@ import { Person } from "@material-ui/icons";
 const img =
   "https://i.picsum.photos/id/1005/367/267.jpg?hmac=bl_eyI1wwd6n-Q120mDottBNmCDNBurz7Z-b5IOeJU0";
 
-function ProfilePicture({ size, image = img, isOwner }) {
+function ProfilePicture({ size, image = img, isOwner, user }) {
   const classes = useProfilePictureStyles({ size, isOwner });
 
   return (
