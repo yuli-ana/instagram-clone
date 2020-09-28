@@ -149,6 +149,11 @@ function EditUserInfo({ user }) {
         <SectionItem text="Name" formItem={user.name} />
         <SectionItem text="Username" formItem={user.username} />
         <SectionItem text="Website" formItem={user.website} />
+        <div className={classes.sectionItem}>
+          <aside>
+            <Typography className={classes.bio}>Bio</Typography>
+          </aside>
+        </div>
       </form>
     </section>
   );
