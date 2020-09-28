@@ -153,6 +153,14 @@ function EditUserInfo({ user }) {
           <aside>
             <Typography className={classes.bio}>Bio</Typography>
           </aside>
+          <TextField
+            variant="outlined"
+            multiline
+            rowMax={3}
+            rows={3}
+            fullWidth
+            value={user.bio}
+          />
         </div>
       </form>
     </section>
