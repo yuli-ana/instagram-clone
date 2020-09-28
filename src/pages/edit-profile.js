@@ -8,7 +8,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  Typography,, TextField
+  Typography, TextField
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
