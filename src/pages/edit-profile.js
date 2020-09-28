@@ -149,4 +149,8 @@ function EditUserInfo({ user }) {
   );
 }
 
+function SectionItem(type = "text", text, formItem) {
+  return;
+}
+
 export default EditProfilePage;
