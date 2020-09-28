@@ -154,7 +154,12 @@ function SectionItem(type = "text", text, formItem) {
   return (
     <div className={classes.SectionItemWrapper}>
       <aside>
-        <Hidden xsDown></Hidden>
+        <Hidden xsDown>
+          <Typography className={classes.typography} align="right">
+            {text}
+          </Typography>
+        </Hidden>
+        <Hidden smUp></Hidden>
       </aside>
     </div>
   );
