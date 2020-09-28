@@ -151,7 +151,13 @@ function EditUserInfo({ user }) {
 
 function SectionItem(type = "text", text, formItem) {
   const classes = useEditProfilePageStyles();
-  return;
+  return (
+    <div className={classes.SectionItemWrapper}>
+      <aside>
+        <Hidden xsDown></Hidden>
+      </aside>
+    </div>
+  );
 }
 
 export default EditProfilePage;
