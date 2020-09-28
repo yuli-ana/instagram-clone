@@ -148,6 +148,7 @@ function EditUserInfo({ user }) {
       <form className={classes.form}>
         <SectionItem text="Name" formItem={user.name} />
         <SectionItem text="Username" formItem={user.username} />
+        <SectionItem text="Website" formItem={user.website} />
       </form>
     </section>
   );
