@@ -8,7 +8,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  Typography,
+  Typography,, TextField
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
@@ -159,8 +159,11 @@ function SectionItem(type = "text", text, formItem) {
             {text}
           </Typography>
         </Hidden>
-        <Hidden smUp></Hidden>
+        <Hidden smUp>
+          <Typography className={classes.typography}>{text}</Typography>
+        </Hidden>
       </aside>
+      <TextField variant="outlined" fullWidth value={formItem} type={type} inputProps={{className: classes.textFieldInput}} className={classes.textFiled}/>
     </div>
   );
 }
