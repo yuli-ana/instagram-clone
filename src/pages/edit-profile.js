@@ -8,7 +8,8 @@ import {
   List,
   ListItem,
   ListItemText,
-  Typography, TextField
+  Typography,
+  TextField,
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
@@ -144,7 +145,10 @@ function EditUserInfo({ user }) {
           </Typography>
         </div>
       </div>
-      <form className={classes.form}></form>
+      <form className={classes.form}>
+        <SectionItem text="Name" formItem={user.name} />
+        <SectionItem text="Username" formItem={user.username} />
+      </form>
     </section>
   );
 }
@@ -163,7 +167,14 @@ function SectionItem(type = "text", text, formItem) {
           <Typography className={classes.typography}>{text}</Typography>
         </Hidden>
       </aside>
-      <TextField variant="outlined" fullWidth value={formItem} type={type} inputProps={{className: classes.textFieldInput}} className={classes.textFiled}/>
+      <TextField
+        variant="outlined"
+        fullWidth
+        value={formItem}
+        type={type}
+        inputProps={{ className: classes.textFieldInput }}
+        className={classes.textFiled}
+      />
     </div>
   );
 }
