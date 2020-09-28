@@ -150,6 +150,7 @@ function EditUserInfo({ user }) {
 }
 
 function SectionItem(type = "text", text, formItem) {
+  const classes = useEditProfilePageStyles();
   return;
 }
 
