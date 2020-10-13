@@ -1,1 +1,1 @@
-# instagram-react12
+# instagram-clone
