@@ -232,9 +232,6 @@ function NameBioSection({ user }) {
     <section className={classes.section}>
       <Typography className={classes.typography}>{user.name}</Typography>
       <Typography>{user.bio}</Typography>
-      <a href={user.website} target="_blank" rel="noopener noreferrer">
-        <Typography color="secondary">{user.website}</Typography>
-      </a>
     </section>
   );
 }
