@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fe588fc6ff2b35f82126a4f039a8b78b",
+    "revision": "2ef8e3f63643f54ea8e3b54d369328f5",
     "url": "/instagram-clone/index.html"
   },
   {
