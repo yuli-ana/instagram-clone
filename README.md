@@ -2,7 +2,7 @@
 
 Replica of Instagram application. The app was built using React library, React Router, React hooks, Material-UI and third-party libraries to create the closest Instagram copy. 
 
-Goal: practice existing skills ⚙️ and try new technology 🔎📚
+*Goal: practice existing skills ⚙️ and try new technologies 🔎📚*
 
 ## Demo
 
